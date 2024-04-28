@@ -60,38 +60,3 @@ devtools(app, isProduction ? { assetsPath: "/.frog" } : { serveStatic });
 
 export const GET = handle(app);
 export const POST = handle(app);
-
-// <div
-//         style={{
-//           alignItems: "center",
-//           background:
-//             status === "response"
-//               ? "linear-gradient(to right, #432889, #17101F)"
-//               : "black",
-//           backgroundSize: "100% 100%",
-//           display: "flex",
-//           flexDirection: "column",
-//           flexWrap: "nowrap",
-//           height: "100%",
-//           justifyContent: "center",
-//           textAlign: "center",
-//           width: "100%",
-//         }}
-//       >
-//         <div
-//           style={{
-//             color: "white",
-//             fontSize: 60,
-//             fontStyle: "black",
-//             letterSpacing: "-0.025em",
-//             lineHeight: 1.4,
-//             marginTop: 30,
-//             padding: "0 120px",
-//             whiteSpace: "pre-wrap",
-//           }}
-//         >
-//           {status === "response"
-//             ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ""}`
-//             : "Welcome!"}
-//         </div>
-//       </div>
