@@ -8,8 +8,11 @@
     "deploy": "vercel"
   },
   "dependencies": {
+    "@airstack/frames": "^1.1.5",
+    "dotenv": "^16.4.5",
     "frog": "latest",
-    "hono": "^4"
+    "hono": "^4",
+    "pf-boggle": "^1.3.0"
   },
   "devDependencies": {
     "tsx": "^4.7.1",
