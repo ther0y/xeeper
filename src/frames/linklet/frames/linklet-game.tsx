@@ -6,12 +6,17 @@ import {
   BoggleAnswer,
   GenerateBoggle,
   SolveBoggle,
-} from "../../../../src/utils/boggle-generator.js";
+} from "../../../utils/boggle-generator.js";
 import { getFarcasterUserDetails } from "@airstack/frames";
-import { AppSate } from "../../../index.js";
+import { LinkletState } from "../../../types.js";
 
 export const LinkletGameFrame = async (
-  c: FrameContext<{ State: AppSate }, "/frames/linklet", BlankInput, AppSate>
+  c: FrameContext<
+    { State: LinkletState },
+    "/frames/linklet",
+    BlankInput,
+    LinkletState
+  >
 ) => {
   const { previousButtonValues, buttonValue, inputText, deriveState } = c;
 
@@ -123,9 +128,9 @@ export const LinkletGameFrame = async (
 
   return c.res({
     image: (
-      <div tw="flex flex-col text-black-500 w-full h-full p-4 justify-center items-center bg-amber-100">
+      <div tw="flex flex-col w-full h-full p-4 justify-center items-center bg-amber-100">
         <div
-          tw="flex flex-row w-full pt-13 flex-grow justify-center space-y-4"
+          tw="flex flex-row w-full pt-13 flex-grow justify-center"
           className="flex flex-col w-full justify-center gap-4 "
         >
           <div tw="flex flex-col pr-24">
@@ -155,7 +160,7 @@ export const LinkletGameFrame = async (
                   <div tw="flex flex-col" key={index}>
                     {row.map((letter, index2) => (
                       <div
-                        tw={`flex w-16 h-16 relative justify-center items-center content-center bg-amber-400 border border-gray-300 m-2 rounded-md font-bold text-bold
+                        tw={`flex w-16 h-16 relative justify-center items-center content-center bg-amber-400 border border-gray-300 m-2 rounded-md font-bold 
                       ${
                         found?.sequence.includes(index * 4 + index2)
                           ? " bg-green-400 scale-125 drop-shadow-xl"
@@ -193,7 +198,7 @@ export const LinkletGameFrame = async (
                 {!userPhotoUrl && "Found words:"}
               </div>
               <div tw="flex flex-col">
-                <div tw="flex flex-col gap-4 space-4" className="gap-8 space-4">
+                <div tw="flex flex-col" className="gap-8">
                   <div tw="flex mt-4">
                     1. {userAnswers[0] ? userAnswers[0] : "____________"}
                   </div>
