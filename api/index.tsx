@@ -26,6 +26,7 @@ export type AppSate = {
 export const app = new Frog<{ State: AppSate }>({
   assetsPath: "/",
   browserLocation: "/",
+  basePath: "/api",
 
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
